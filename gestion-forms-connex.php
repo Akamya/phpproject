@@ -1,5 +1,7 @@
 <?php
 
+require_once 'helpers.php';
+
 //Besoin d'initialiser les variables car la page est dans GET à la base (pas POST)
 $formError = null;
 $messagePseudoCo = null;
@@ -28,18 +30,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($formError == false) {
         try
         {
-            // Instancier la connexion à la base de données.
-            $pdo = connexion_bdd();
-            
-            // Récupérer utilisateur en DB grâce à son pseudo
-            $requete = "SELECT * FROM t_utilisateur_uti WHERE uti_pseudo = '$pseudoCo'";
 
-            // Exécute la requête
-            $stmt = $pdo->query($requete);
-    
-            // Récupérer le résultat sous le format de tableau associatif
-            $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
-
+            $utilisateur = loadUtilisateur($pseudoCo);
 
             // Si le compte existe
             if($utilisateur){
@@ -52,6 +44,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 if($mdpVerif){
                     $messageMdpCo = "Mdp correct";
+                    connecter_utilisateur($utilisateur['uti_pseudo']);
+
                 }else{
                     $messageMdpCo = "Ce mdp n'est pas correct";
                 }

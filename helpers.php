@@ -10,6 +10,7 @@ function isActive($parametre){
     }
 }
 
+
 //Affiche un message à la soumission du formulaire
 function statutForm($error){
     if($error){
@@ -23,8 +24,77 @@ function statutForm($error){
     }
 }
 
+function startSession(){
+    // Cette options passée à 1 permet au serveur de rejeter un identifiant de session qui n'aurait pas été initialisé par celui-ci.
+    ini_set('session.use_strict_mode', 1);
+
+    // Empêcher la récupération du cookie de session via l'URL (1 est sa valeur par défaut, mais on est jamais trop prudent).
+    ini_set('session.use_only_cookies', 1);
+
+    // Configuration sécurisée de la variable de session avant de démarrer celle-ci.
+    session_set_cookie_params([
+        'path' => '/',
+        'secure' => false,
+        'httponly' => true,
+        'samesite' => 'lax'
+    ]);
+
+    // Démarrer la gestion des variables de session.
+    session_start();
+}
+
+
+function connecter_utilisateur($utilisateurPseudo){
+
+    // Créer une variable de session
+    $_SESSION['utilisateurPseudo'] = $utilisateurPseudo;
+    }
+
+
+function est_connecte(){
+    $utilisateurPseudo = $_SESSION['utilisateurPseudo'];
+
+    if($utilisateurPseudo){
+        return true;
+    }else{
+        return false;
+    }
+    
+}
+
+function deconnecter_utilisateur(){
+    unset($_SESSION['utilisateurPseudo']);
+}
+
+// Redirection sur une autre page
+function redirect($url) {
+    header('Location: '.$url);
+    die();
+}
+
+// Prendre l'utilisateur dans la DB
+function loadUtilisateur($pseudo){
+    // Instancier la connexion à la base de données.
+    $pdo = connexion_bdd();
+            
+    // Récupérer utilisateur en DB grâce à son pseudo
+    $requete = "SELECT * FROM t_utilisateur_uti WHERE uti_pseudo = '$pseudo'";
+    
+    // Exécute la requête
+    $stmt = $pdo->query($requete);
+
+    // Récupérer le résultat sous le format de tableau associatif
+    $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $utilisateur;
+}
+
+
+
 // Constante globale permettant de préciser que l'application est en mode "développement".
 define('DEV_MODE', true);
+
+
 
 // Fonction permettant de centraliser la gestion des erreurs liées à une requête :
 function gerer_exceptions(PDOException $e): void
@@ -36,6 +106,8 @@ function gerer_exceptions(PDOException $e): void
         echo "Erreur d'exécution de requête : " . $e->getMessage() . PHP_EOL;
     }
 }
+
+
 
 // Permet de se connecter à la DB
 function connexion_bdd(): ?PDO

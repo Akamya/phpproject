@@ -1,3 +1,8 @@
+<?php
+require_once 'helpers.php';
+startSession()
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,8 +16,8 @@
     $metaDescription = "Ceci est la page de connexion";
     require_once 'header.php';
     require_once 'gestion-forms-connex.php';
-    require_once 'helpers.php'; ?>
-    
+    ?>
+
     <h1>Connexion</h1>
 
     <form method="post">
