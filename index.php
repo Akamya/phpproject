@@ -1,3 +1,8 @@
+<?php
+require_once 'helpers.php';
+startSession()
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

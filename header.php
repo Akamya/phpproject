@@ -20,9 +20,9 @@
 
                 <li class="<?php isActive('contact.php'); ?>"><a href="contact.php">Contact</a></li>
 
-                <li class="<?php isActive('connexion.php'); ?>"><a href="connexion.php">Connexion</a></li>
+                <li class="<?php isActive('connexion.php'); cacheSiCo()?>"><a href="connexion.php">Connexion</a></li>
 
-                <li class="<?php isActive('profil.php'); ?>"><a href="profil.php">Profil</a></li>
+                <li class="<?php isActive('profil.php'); cacheSiDeco()?>"><a href="profil.php">Profil</a></li>
             </ul>
         </nav>
     </header>

@@ -21,6 +21,10 @@ startSession()
     }else{
         $utilisateur = loadUtilisateur($_SESSION['utilisateurPseudo']);
     }
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        deconnecter_utilisateur();
+        redirect('/connexion.php');
+    }
     ?>
     
     <h1>Profil</h1>
@@ -29,7 +33,9 @@ startSession()
     <p>Email: </p>
     <p><?=$utilisateur['uti_email']?></p>
 
-    <button>Déconnexion</button>
+    <form method="post">
+        <input type="submit" id="boutonDeco" name="boutonDeco" value="Déconnexion">
+    </form>
 
     <?php require_once 'footer.php'; ?>
 </body>

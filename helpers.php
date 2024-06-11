@@ -44,23 +44,16 @@ function startSession(){
 }
 
 
-function connecter_utilisateur($utilisateurPseudo){
-
+function connecter_utilisateur($utilisateurPseudo){ 
     // Créer une variable de session
     $_SESSION['utilisateurPseudo'] = $utilisateurPseudo;
     }
 
 
 function est_connecte(){
-    $utilisateurPseudo = $_SESSION['utilisateurPseudo'];
-
-    if($utilisateurPseudo){
-        return true;
-    }else{
-        return false;
-    }
-    
+    return isset($_SESSION['utilisateurPseudo']);
 }
+
 
 function deconnecter_utilisateur(){
     unset($_SESSION['utilisateurPseudo']);
@@ -89,6 +82,21 @@ function loadUtilisateur($pseudo){
     return $utilisateur;
 }
 
+function cacheSiCo(){
+    if(est_connecte()){
+        echo "hidden";
+    }
+}
+
+function cacheSiDeco() {
+    if(est_connecte() == false){
+        echo "hidden";
+    }
+}
+
+// 
+// 
+// 
 
 
 // Constante globale permettant de préciser que l'application est en mode "développement".

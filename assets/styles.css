@@ -1,7 +1,11 @@
 .liens {
-    display:inline-block;
+  display: inline-block;
 }
 
 .active {
-    background-color: red;
+  background-color: red;
+}
+
+.hidden {
+  display: none;
 }

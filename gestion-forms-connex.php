@@ -45,6 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if($mdpVerif){
                     $messageMdpCo = "Mdp correct";
                     connecter_utilisateur($utilisateur['uti_pseudo']);
+                    redirect('/profil.php');
 
                 }else{
                     $messageMdpCo = "Ce mdp n'est pas correct";

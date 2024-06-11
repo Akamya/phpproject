@@ -1,3 +1,8 @@
+<?php
+require_once 'helpers.php';
+startSession()
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,7 +16,11 @@
     $metaDescription = "Ceci est la page d'inscription";
     require_once 'header.php';
     require_once 'gestion-forms-inscr.php';
-    require_once 'helpers.php'; ?>
+    require_once 'helpers.php';
+    if(est_connecte()){
+        redirect('/profil.php');
+    }
+    ?>
     
     <h1>Inscription</h1>
 

@@ -16,6 +16,9 @@ startSession()
     $metaDescription = "Ceci est la page de connexion";
     require_once 'header.php';
     require_once 'gestion-forms-connex.php';
+    if(est_connecte()){
+        redirect('/profil.php');
+    }
     ?>
 
     <h1>Connexion</h1>
