@@ -1,3 +1,5 @@
+/* EN LIEN AVEC LE CODE */
+
 .liens {
   display: inline-block;
 }
@@ -9,3 +11,167 @@
 .hidden {
   display: none;
 }
+
+/* STYLE */
+
+body {
+  background-color: antiquewhite;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+.container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 0.5em;
+}
+
+.col-12 {
+  grid-column: span 12;
+}
+
+.col-9 {
+  grid-column: span 9;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-5 {
+  grid-column: span 5;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col-1 {
+  grid-column: span 1;
+}
+
+nav ul li {
+  list-style-type: none;
+  border-width: 0px 1px 0px 1px;
+  border-color: black;
+  border-style: solid;
+  background-color: black;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.banner {
+  background: url("../assets/img/php-development.png") no-repeat;
+  height: auto;
+  padding: 5%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* .col-12,
+.col-6,
+.col-4,
+.col-3,
+.col-2,
+.col-1 {
+  position: relative;
+}
+
+figure {
+  width: 100%;
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+#logo {
+  width: 20%;
+  margin: auto;
+}
+
+nav ul {
+  padding: 0;
+}
+
+article {
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.492);
+  border-width: 0px 1px 0px 1px;
+  border: black solid 1px;
+}
+
+h1 {
+  padding-left: 1em;
+  font-size: 3em;
+  text-shadow: rgba(0, 0, 0, 0.436) 1px 0 10px;
+}
+
+iframe {
+  width: 100%;
+}
+
+footer {
+  padding: 1em;
+  text-align: center;
+}
+
+li a:link,
+li a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+li a:hover {
+  animation-name: nav;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes nav {
+  0% {
+    color: white;
+  }
+
+  50% {
+    color: rgb(255, 191, 72);
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+#latest {
+  animation-name: latest;
+  animation: example 1s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes latest {
+  0% {
+    color: white;
+  }
+
+  50% {
+    color: rgb(255, 191, 72);
+  }
+
+  100% {
+    color: white;
+  }
+} */
