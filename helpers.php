@@ -1,4 +1,16 @@
 <?php
+
+//Parse .env
+$env = file_get_contents(__DIR__ . "/.env");
+$lines = explode("\n", $env);
+ 
+foreach ($lines as $line) {
+    preg_match("/([^#]+)\=(.*)/", $line, $matches);
+    if (isset($matches[2])) {
+        putenv(trim($line));
+    }
+}
+
 //Met la classe "active" sur le lien actif
 function isActive($parametre){
 
@@ -125,7 +137,7 @@ function connexion_bdd(): ?PDO
     {
         // Instancier une nouvelle connexion.
 
-        $pdo = new PDO("mysql:host=" . getenv("DBHOST") . ";dbname=" . getenv("DBNAME") . ";charset=utf8", getenv("DBUSER"), getenv("DBPASSWORD"));
+        $pdo = new PDO("mysql:host=" . getEnv("DBHOST") . ";dbname=" . getEnv("DBNAME") . ";charset=utf8", getEnv("DBUSER"), getEnv("DBPASSWORD"));
 
         // Définir le mode d'erreur sur "exception".
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

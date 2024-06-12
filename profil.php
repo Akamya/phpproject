@@ -1,7 +1,6 @@
 <?php
-require_once './gestion-forms-connex.php';
 require_once './helpers.php';
-startSession()
+startSession();
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +15,9 @@ startSession()
     $pageTitre = "Profil";
     $metaDescription = "Ceci est la page de profil";
     require_once './header.php';
+    echo "test" . $_SESSION['utilisateurPseudo'];
     if(est_connecte() == false){
-        redirect('/connexion.php');
+        // redirect('/connexion.php');
     }else{
         $utilisateur = loadUtilisateur($_SESSION['utilisateurPseudo']);
     }
