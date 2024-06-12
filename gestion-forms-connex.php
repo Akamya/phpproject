@@ -30,7 +30,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($formError == false) {
         try
         {
-            echo "elo0";
 
             $utilisateur = loadUtilisateur($pseudoCo);
 
@@ -44,12 +43,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $mdpVerif = password_verify($mdpCo, $hashFromDB);
 
                 if($mdpVerif){
-                    echo "elo1";
                     $messageMdpCo = "Mdp correct";
                     connecter_utilisateur($utilisateur['uti_pseudo']);
-                    echo "elo2";
                     redirect('/profil.php');
-                    echo "elo3";
 
                 }else{
                     $messageMdpCo = "Ce mdp n'est pas correct";

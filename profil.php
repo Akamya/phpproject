@@ -15,9 +15,8 @@ startSession();
     $pageTitre = "Profil";
     $metaDescription = "Ceci est la page de profil";
     require_once './header.php';
-    echo "test" . $_SESSION['utilisateurPseudo'];
     if(est_connecte() == false){
-        // redirect('/connexion.php');
+        redirect('/connexion.php');
     }else{
         $utilisateur = loadUtilisateur($_SESSION['utilisateurPseudo']);
     }
