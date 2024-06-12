@@ -1,7 +1,7 @@
 <?php
 require_once './helpers.php';
+startSession();
 require_once './gestion-forms-contact.php'; 
-startSession()
 ?>
 
 <!DOCTYPE html>

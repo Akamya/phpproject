@@ -14,6 +14,7 @@ dist-ssr
 .env
 .env.ovh
 .env.local
+.env.ovh
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

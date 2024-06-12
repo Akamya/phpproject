@@ -1,6 +1,5 @@
 <?php
-require_once  __DIR__ . DIRECTORY_SEPARATOR . "helpers.php";
-
+require_once './helpers.php';
 startSession()
 ?>
 
@@ -15,10 +14,10 @@ startSession()
     <?php
     $pageTitre = "Accueil";
     $metaDescription = "Ceci est la page d'accueil";
-    require_once  __DIR__ . DIRECTORY_SEPARATOR . "header.php"; ?>
+    require_once './header.php'; ?>
     
     <h1>Accueil</h1>
 
-    <?php require_once  __DIR__ . DIRECTORY_SEPARATOR . "footer.php"; ?>
+    <?php require_once './footer.php'; ?>
 </body>
 </html>

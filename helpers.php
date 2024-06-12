@@ -1,8 +1,7 @@
 <?php
 
-
 function parseEnv() {
-//Parse .env
+    //Parse .env
     $env = file_get_contents(__DIR__ . "/.env");
     $lines = explode("\n", $env);
     
@@ -13,7 +12,6 @@ function parseEnv() {
         }
     }
 }
-
 
 //Met la classe "active" sur le lien actif
 function isActive($parametre){
@@ -137,6 +135,8 @@ function gerer_exceptions(PDOException $e): void
 // Permet de se connecter à la DB
 function connexion_bdd(): ?PDO
 {
+
+    parseEnv();
 
     try
     {
