@@ -123,7 +123,6 @@ function connexion_bdd(): ?PDO
 
     try
     {
-        echo "test" . getenv("DBHOST");
         // Instancier une nouvelle connexion.
 
         $pdo = new PDO("mysql:host=" . getenv("DBHOST") . ";dbname=" . getenv("DBNAME") . ";charset=utf8", getenv("DBUSER"), getenv("DBPASSWORD"));
