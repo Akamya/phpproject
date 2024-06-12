@@ -1,5 +1,6 @@
 <?php
-require_once 'helpers.php';
+require_once './helpers.php';
+require_once './gestion-forms-contact.php'; 
 startSession()
 ?>
 
@@ -13,9 +14,7 @@ startSession()
     <?php
     $pageTitre = "Contact";
     $metaDescription = "Ceci est la page contact";
-    require_once 'header.php'; 
-    require_once 'gestion-forms-contact.php'; 
-    require_once 'helpers.php'; 
+    require_once './header.php'; 
     ?>
 
     <h1>Contact</h1>
@@ -44,6 +43,6 @@ startSession()
         <p><?=$formError==false ? $emailStatut : ""?></p>
     </form>
 
-    <?php require_once 'footer.php'; ?>
+    <?php require_once './footer.php'; ?>
 </body>
 </html>

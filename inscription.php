@@ -1,5 +1,6 @@
 <?php
-require_once 'helpers.php';
+require_once './helpers.php';
+require_once './gestion-forms-inscr.php';
 startSession()
 ?>
 
@@ -14,9 +15,7 @@ startSession()
     <?php
     $pageTitre = "Inscription";
     $metaDescription = "Ceci est la page d'inscription";
-    require_once 'header.php';
-    require_once 'gestion-forms-inscr.php';
-    require_once 'helpers.php';
+    require_once './header.php';
     if(est_connecte()){
         redirect('/profil.php');
     }
@@ -47,6 +46,6 @@ startSession()
         <p><?php statutForm($formError)?></p>
     </form>
 
-    <?php require_once 'footer.php'; ?>
+    <?php require_once './footer.php'; ?>
 </body>
 </html>

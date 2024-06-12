@@ -1,5 +1,6 @@
 <?php
-require_once 'helpers.php';
+require_once './helpers.php';
+require_once './gestion-forms-connex.php';
 startSession()
 ?>
 
@@ -14,8 +15,7 @@ startSession()
     <?php
     $pageTitre = "Connexion";
     $metaDescription = "Ceci est la page de connexion";
-    require_once 'header.php';
-    require_once 'gestion-forms-connex.php';
+    require_once './header.php';
     if(est_connecte()){
         redirect('/profil.php');
     }
@@ -38,6 +38,6 @@ startSession()
         <p><?php statutForm($formError)?></p>
     </form>
 
-    <?php require_once 'footer.php'; ?>
+    <?php require_once './footer.php'; ?>
 </body>
 </html>

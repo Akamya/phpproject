@@ -1,5 +1,6 @@
 <?php
-require_once 'helpers.php';
+require_once './gestion-forms-connex.php';
+require_once './helpers.php';
 startSession()
 ?>
 
@@ -14,8 +15,7 @@ startSession()
     <?php
     $pageTitre = "Profil";
     $metaDescription = "Ceci est la page de profil";
-    require_once 'header.php';
-    require_once 'gestion-forms-connex.php';
+    require_once './header.php';
     if(est_connecte() == false){
         redirect('/connexion.php');
     }else{
@@ -37,6 +37,6 @@ startSession()
         <input type="submit" id="boutonDeco" name="boutonDeco" value="Déconnexion">
     </form>
 
-    <?php require_once 'footer.php'; ?>
+    <?php require_once './footer.php'; ?>
 </body>
 </html>

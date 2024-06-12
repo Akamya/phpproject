@@ -120,15 +120,11 @@ function gerer_exceptions(PDOException $e): void
 // Permet de se connecter à la DB
 function connexion_bdd(): ?PDO
 {
-    $nomDuServeur = "localhost";
-    $nomUtilisateur = "root";
-    $motDePasse = "";
-    $nomBDD = "bdd_ifosup";
 
     try
     {
+        echo "test" . getenv("DBHOST");
         // Instancier une nouvelle connexion.
-        // $pdo = new PDO("mysql:host=$nomDuServeur;dbname=$nomBDD", $nomUtilisateur, $motDePasse);
 
         $pdo = new PDO("mysql:host=" . getenv("DBHOST") . ";dbname=" . getenv("DBNAME") . ";charset=utf8", getenv("DBUSER"), getenv("DBPASSWORD"));
 
@@ -141,7 +137,7 @@ function connexion_bdd(): ?PDO
     catch(PDOException $e)
     {
         // Relancer l'exception pour qu'elle soit capturée par le bloc "try/catch" parent.
-        throw e;
+        throw $e;
     }
 }
 
