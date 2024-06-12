@@ -1,15 +1,19 @@
 <?php
 
+
+function parseEnv() {
 //Parse .env
-$env = file_get_contents(__DIR__ . "/.env");
-$lines = explode("\n", $env);
- 
-foreach ($lines as $line) {
-    preg_match("/([^#]+)\=(.*)/", $line, $matches);
-    if (isset($matches[2])) {
-        putenv(trim($line));
+    $env = file_get_contents(__DIR__ . "/.env");
+    $lines = explode("\n", $env);
+    
+    foreach ($lines as $line) {
+        preg_match("/([^#]+)\=(.*)/", $line, $matches);
+        if (isset($matches[2])) {
+            putenv(trim($line));
+        }
     }
 }
+
 
 //Met la classe "active" sur le lien actif
 function isActive($parametre){
@@ -79,6 +83,7 @@ function redirect($url) {
 
 // Prendre l'utilisateur dans la DB
 function loadUtilisateur($pseudo){
+
     // Instancier la connexion à la base de données.
     $pdo = connexion_bdd();
             
@@ -135,8 +140,11 @@ function connexion_bdd(): ?PDO
 
     try
     {
-        // Instancier une nouvelle connexion.
 
+        // recupere les info du .env
+        parseEnv();
+
+        // Instancier une nouvelle connexion.
         $pdo = new PDO("mysql:host=" . getEnv("DBHOST") . ";dbname=" . getEnv("DBNAME") . ";charset=utf8", getEnv("DBUSER"), getEnv("DBPASSWORD"));
 
         // Définir le mode d'erreur sur "exception".

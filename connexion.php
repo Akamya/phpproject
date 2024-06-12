@@ -1,7 +1,7 @@
 <?php
 require_once './helpers.php';
 require_once './gestion-forms-connex.php';
-startSession()
+startSession();
 ?>
 
 <!DOCTYPE html>
