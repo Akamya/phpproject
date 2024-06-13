@@ -41,12 +41,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Calcule un hash sur base de $mdp
             $mdpHash = password_hash($mdp, PASSWORD_DEFAULT);
             
-            $pseudo = $_SESSION['utilisateurPseudo'];
+            $id = $_SESSION['utilisateurID'];
             // La requête permettant de modifier le mdp.
-            $requete = "UPDATE t_utilisateur_uti SET uti_motdepasse = :mdp WHERE uti_pseudo = :pseudo";
+            $requete = "UPDATE t_utilisateur_uti SET uti_motdepasse = :mdp WHERE uti_id = :id";
             $stmt = $pdo->prepare($requete);
             $stmt->bindValue(':mdp', $mdpHash, PDO::PARAM_STR);
-            $stmt->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $id, PDO::PARAM_STR);
 
             $stmt->execute();
         }

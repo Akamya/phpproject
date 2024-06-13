@@ -22,21 +22,21 @@ function startSession(){
 
 
 // Crée une variable de session qui servira à identifier l'utilisateur actif (pseudo est unique).
-function connecter_utilisateur($utilisateurPseudo){ 
+function connecter_utilisateur($utilisateurID){ 
     // Créer une variable de session
-    $_SESSION['utilisateurPseudo'] = $utilisateurPseudo;
+    $_SESSION['utilisateurID'] = $utilisateurID;
 }
 
 
 // Vérifie si l'utilisateur est connecté.
 function est_connecte(){
-    return isset($_SESSION['utilisateurPseudo']);
+    return isset($_SESSION['utilisateurID']);
 }
 
 
 // Déconnecte l'ulisateur en supprimant la variable de session.
 function deconnecter_utilisateur(){
-    unset($_SESSION['utilisateurPseudo']);
+    unset($_SESSION['utilisateurID']);
 }
 
 

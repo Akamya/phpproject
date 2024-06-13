@@ -27,6 +27,24 @@ function connexion_bdd(): ?PDO
     }
 }
 
+// Prendre l'utilisateur dans la DB sur base de l'ID, return false si pas trouvé.
+function loadUtilisateurByID($id){
+
+    // Instancier la connexion à la base de données.
+    $pdo = connexion_bdd();
+            
+    // Récupérer utilisateur en DB grâce à son pseudo
+    $requete = "SELECT * FROM t_utilisateur_uti WHERE uti_id = '$id'";
+    
+    // Exécute la requête
+    $stmt = $pdo->query($requete);
+
+    // Récupérer le résultat sous le format de tableau associatif
+    $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $utilisateur;
+}
+
 
 // Prendre l'utilisateur dans la DB sur base du pseudo, return false si pas trouvé.
 function loadUtilisateurByPseudo($pseudo){

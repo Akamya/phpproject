@@ -20,7 +20,7 @@ startSession();
     if(est_connecte() == false){
         redirect('../connexion/connexion.php');
     }else{
-        $utilisateur = loadUtilisateurByPseudo($_SESSION['utilisateurPseudo']);
+        $utilisateur = loadUtilisateurByID($_SESSION['utilisateurID']);
     }
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         deconnecter_utilisateur();

@@ -28,12 +28,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $emailUtilise = loadUtilisateurByEmail($emailInscr);
 
             if($emailUtilise == false){
-                $pseudo = $_SESSION['utilisateurPseudo'];
+                $id = $_SESSION['utilisateurID'];
                 // La requête permettant de modifier l'email.
-                $requete = "UPDATE t_utilisateur_uti SET uti_email = :email WHERE uti_pseudo = :pseudo";
+                $requete = "UPDATE t_utilisateur_uti SET uti_email = :email WHERE uti_id = :id";
                 $stmt = $pdo->prepare($requete);
                 $stmt->bindValue(':email', $emailInscr, PDO::PARAM_STR);
-                $stmt->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+                $stmt->bindValue(':id', $id, PDO::PARAM_STR);
                 $stmt->execute();
             }else{
                 $formError = true;
