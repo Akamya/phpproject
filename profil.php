@@ -34,7 +34,7 @@ require_once './gestion-forms-connex.php';
     <p><?=$utilisateur['uti_email']?></p>
 
     <form method="post">
-        <input type="submit" id="boutonDeco" name="boutonDeco" value="Déconnexion">
+        <input type="submit" id="boutonDeco" class="bouton" name="boutonDeco" value="Déconnexion">
     </form>
 
     <?php require_once './footer.php'; ?>

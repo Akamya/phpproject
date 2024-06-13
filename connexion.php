@@ -23,20 +23,28 @@ require_once 'gestion-forms-connex.php';
 
     <h1>Connexion</h1>
 
-    <form method="post">
-        <label for="pseudoCo">Pseudo : </label><br>
-        <input type="text" name="pseudoCo" id="pseudoCo" minlength="2" maxlength="255" required value=<?=$formError ? $pseudoCo : ""?>><br>
-        <p><?=$messagePseudoCo?></p>
+    <div  class="containerContact">
+        <form class="formContact" method="post">
+            <div class="flexInput">
+                <!-- <label for="pseudoCo">Pseudo : </label> -->
+                <input type="text" name="pseudoCo" id="pseudoCo" minlength="2" maxlength="255" required placeholder="Pseudo*" value=<?=$formError ? $pseudoCo : ""?>>
+                <p class="messageInput"><?=$messagePseudoCo?></p>
+            </div>
+            
 
-        <label for="mdpCo">Mot de passe : </label><br>
-        <input type="password" id="mdpCo" name="mdpCo" minlength="8" maxlength="72" required /><br>
-        <p><?=$messageMdpCo?></p>
-
-        <input type="submit" id="bouton" name="bouton" value="Valider">
-        <p><a href="/inscription.php">Pas de compte ? Inscrivez-vous ici !</a></p>
-        
-        <p><?php statutForm($formError)?></p>
-    </form>
+            <div class="flexInput">
+                <!-- <label for="mdpCo">Mot de passe : </label> -->
+                <input type="password" id="mdpCo" name="mdpCo" minlength="8" maxlength="72" required placeholder="Mot de passe*" />
+                <p class="messageInput"><?=$messageMdpCo?></p>
+            </div>
+            
+            <input type="submit" id="boutonCo" class="bouton" name="bouton" value="Valider">
+            <p class="messageInput"><a href="/inscription.php">Pas de compte ? Inscrivez-vous ici !</a></p>
+            
+            <p class="messageInput"><?php statutForm($formError)?></p>
+        </form>
+    </div>
+    
 
     <?php require_once './footer.php'; ?>
 </body>

@@ -19,29 +19,43 @@ require_once './gestion-forms-contact.php';
 
     <h1>Contact</h1>
 
-    <!-- ex : "value=<?=$formError ? $nom : ""?>" permet de mettre valeur dans le champs quand soumission a échouée -->
-    <form method="post">
-        <label for="nom">Nom : </label><br>
-        <input type="text" name="nom" id="nom" minlength="2" maxlength="255" required value=<?=$formError ? $nom : ""?>><br>
-        <p><?=$messageNom?></p>
+    <div class="containerContact">
+        <!-- ex : "value=<?=$formError ? $nom : ""?>" permet de mettre valeur dans le champs quand soumission a échouée -->
+        <form class="formContact" method="post">
+            <div class="flexInput">
+                <!-- <label for="nom">Nom : </label> -->
+                <input type="text" name="nom" id="nom" minlength="2" maxlength="255" required placeholder="Nom*" value=<?=$formError ? $nom : ""?>>
+                <p class="messageInput"><?=$messageNom?></p>
+            </div>
 
-        <label for="prenom">Prénom : </label><br>
-        <input type="text" name="prenom" id="prenom" minlength="2" maxlength="255" value=<?=$formError ? $prenom : ""?>><br>
-        <p><?=$messagePrenom?></p>
+            <div class="flexInput">
+                <!-- <label for="prenom">Prénom : </label> -->
+                <input type="text" name="prenom" id="prenom" minlength="2" maxlength="255" placeholder="Prénom" value=<?=$formError ? $prenom : ""?>>
+                <p class="messageInput"><?=$messagePrenom?></p>
+            </div>
+            
 
-        <label for="email">Email : </label><br>
-        <input type="email" id="email" name="email" required value=<?=$formError ? $email : ""?>><br>
-        <p><?=$messageEmail?></p>
-
-        <label for="message">Message : </label><br>
-        <textarea id="message" name="message" minlength="10" maxlength="3000" required><?=$formError ? $message : ""?></textarea><br>
-        <p><?=$messageMess?></p>
-
-        <input type="submit" id="bouton" name="bouton" value="Valider">
+            <div class="flexInput">
+                <!-- <label for="email">Email : </label> -->
+                <input type="email" id="email" name="email" required placeholder="Email*" value=<?=$formError ? $email : ""?>>
+                <p class="messageInput"><?=$messageEmail?></p>
+            </div>
         
-        <p><?php statutForm($formError)?></p>
-        <p><?=$formError==false ? $emailStatut : ""?></p>
-    </form>
+
+            <div class="flexInput">
+                <!-- <label for="message">Message : </label> -->
+                <textarea id="message" name="message" minlength="10" maxlength="3000" placeholder="Message*" required><?=$formError ? $message : ""?></textarea>
+                <p class="messageInput"><?=$messageMess?></p>
+            </div>
+            
+
+            <input type="submit" id="boutonCont" class="bouton" name="bouton" value="Valider">
+            
+            <p class="messageInput"><?php statutForm($formError)?></p>
+            <p class="messageInput"><?=$formError==false ? $emailStatut : ""?></p>
+        </form>
+    </div>
+    
 
     <?php require_once './footer.php'; ?>
 </body>

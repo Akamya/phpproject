@@ -1,11 +1,8 @@
 /* EN LIEN AVEC LE CODE */
 
-.liens {
-  display: inline-block;
-}
-
 .active {
-  background-color: red;
+  background-color: rgba(255, 255, 255, 0.244);
+  color: black;
 }
 
 .hidden {
@@ -15,9 +12,10 @@
 /* STYLE */
 
 body {
-  background-color: antiquewhite;
+  background-color: rgb(126, 138, 171);
   font-family: "Roboto", sans-serif;
   font-style: normal;
+  color: white;
 }
 
 .container {
@@ -59,24 +57,85 @@ body {
   grid-column: span 1;
 }
 
-nav ul li {
-  list-style-type: none;
-  border-width: 0px 1px 0px 1px;
-  border-color: black;
-  border-style: solid;
-  background-color: black;
-  color: white;
+header nav ul li {
   padding: 0.5em;
+  list-style-type: none;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.8em;
+  border: solid 1px white;
+  border-radius: 30px;
+}
+
+header nav ul a:link,
+header nav ul a:visited {
+  color: white;
+  text-decoration: none;
 }
 
 .banner {
-  background: url("../assets/img/php-development.png") no-repeat;
+  background: url("../assets/img/php-development.png");
   height: auto;
-  padding: 5%;
+  padding: 7.5%;
   background-size: cover;
   background-position: center;
+}
+
+.liens {
+  background-color: rgb(86, 101, 145);
+}
+
+header div {
+  height: 50em;
+}
+
+H1 {
+  font-size: 2em;
+  text-align: center;
+  padding-top: 3em;
+}
+
+.containerContact {
+  display: flex;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 2em;
+  justify-content: center;
+}
+
+.formContact {
+  text-align: center;
+  width: 20em;
+}
+
+.flexInput {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+  flex-direction: column;
+}
+
+.messageInput {
+  padding-top: 1em;
+}
+
+input,
+textarea {
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.bouton {
+  padding-top: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 0.5em;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 1em;
 }
 
 /* .col-12,
