@@ -33,7 +33,9 @@ require_once './gestion-forms-connex.php';
     <p>Email: </p>
     <p><?=$utilisateur['uti_email']?></p>
 
-    <form method="post">
+    <p class="messageInput"><a href="/changemdp.php">Modifier son mot de passe</a></p>
+
+    <form class="messageInput" method="post">
         <input type="submit" id="boutonDeco" class="bouton" name="boutonDeco" value="Déconnexion">
     </form>
 
