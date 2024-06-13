@@ -1,6 +1,8 @@
 <?php
 
-require_once './helpers.php';
+require_once '../helpers/helpers.php';
+require_once '../helpers/helpers_session.php';
+require_once '../helpers/helpers_DB.php';
 
 //Besoin d'initialiser les variables car la page est dans GET à la base (pas POST)
 $formError = null;
@@ -45,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if($mdpVerif){
                     $messageMdpCo = "Mdp correct";
                     connecter_utilisateur($utilisateur['uti_pseudo']);
-                    redirect('/profil.php');
+                    redirect('../profil/profil.php');
 
                 }else{
                     $messageMdpCo = "Ce mdp n'est pas correct";

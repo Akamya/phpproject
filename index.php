@@ -1,5 +1,5 @@
 <?php
-require_once './helpers.php';
+require_once './helpers/helpers_session.php';
 startSession()
 ?>
 

@@ -1,7 +1,8 @@
 <?php
-require_once 'helpers.php';
+require_once '../helpers/helpers_session.php';
+require_once '../helpers/helpers_forms.php';
 startSession();
-require_once 'gestion-forms-connex.php';
+require_once './gestion-forms-connex.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +16,9 @@ require_once 'gestion-forms-connex.php';
     <?php
     $pageTitre = "Connexion";
     $metaDescription = "Ceci est la page de connexion";
-    require_once './header.php';
+    require_once '../header.php';
     if(est_connecte()){
-        redirect('/profil.php');
+        redirect('../profil/profil.php');
     }
     ?>
 
@@ -39,13 +40,13 @@ require_once 'gestion-forms-connex.php';
             </div>
             
             <input type="submit" id="boutonCo" class="bouton" name="bouton" value="Valider">
-            <p class="messageInput"><a href="/inscription.php">Pas de compte ? Inscrivez-vous ici !</a></p>
+            <p class="messageInput"><a href="../inscription/inscription.php">Pas de compte ? Inscrivez-vous ici !</a></p>
             
             <p class="messageInput"><?php statutForm($formError)?></p>
         </form>
     </div>
     
 
-    <?php require_once './footer.php'; ?>
+    <?php require_once '../footer.php'; ?>
 </body>
 </html>

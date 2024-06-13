@@ -1,4 +1,8 @@
-<?php require_once './helpers.php'?>
+<?php 
+require_once __dir__ . '/helpers/helpers.php';
+require_once __dir__ . '/helpers/helpers_session.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,8 +12,8 @@
     <title><?=$pageTitre ?? ''?></title>
     <!-- ex: $pageTitre ?? ''
     Permet de vérifier si la valeur existe(pas null), sinon '' (ex: string vide)-->
-    <link rel="stylesheet" href="./assets/reset.css">
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="/assets/reset.css">
+    <link rel="stylesheet" href="/assets/styles.css">
     <!-- Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,11 +28,11 @@
                 <!-- Met la classe "active" sur le lien actif -->
                 <li class="<?php isActive('index.php'); ?> col-4"><a href="/index.php">Accueil</a></li>
 
-                <li class="<?php isActive('contact.php'); ?> col-4"><a href="/contact.php">Contact</a></li>
+                <li class="<?php isActive('contact.php'); ?> col-4"><a href="/contact/contact.php">Contact</a></li>
 
-                <li class="<?php isActive('connexion.php'); cacheSiCo()?> col-4"><a href="/connexion.php">Connexion</a></li>
+                <li class="<?php isActive('connexion.php'); cacheSiCo()?> col-4"><a href="/connexion/connexion.php">Connexion</a></li>
 
-                <li class="<?php isActive('profil.php'); cacheSiDeco()?> col-4"><a href="/profil.php">Profil</a></li>
+                <li class="<?php isActive('profil.php'); cacheSiDeco()?> col-4"><a href="/profil/profil.php">Profil</a></li>
             </ul>
         </nav>
         

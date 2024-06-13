@@ -1,5 +1,7 @@
 <?php
-require_once './helpers.php';
+require_once '../helpers/helpers.php';
+require_once '../helpers/helpers_session.php';
+require_once '../helpers/helpers_forms.php';
 startSession();
 require_once './gestion-forms-mdp.php';
 
@@ -16,9 +18,9 @@ require_once './gestion-forms-mdp.php';
     <?php
     $pageTitre = "Modification du mot de passe";
     $metaDescription = "Ceci est la page de la modification du mot de passe";
-    require_once 'header.php';
+    require_once '../header.php';
     if(est_connecte() == false){
-        redirect('/connexion.php');
+        redirect('../connexion/connexion.php');
     }
     ?>
     
@@ -48,6 +50,6 @@ require_once './gestion-forms-mdp.php';
     </div>
     
 
-    <?php require_once './footer.php'; ?>
+    <?php require_once '../footer.php'; ?>
 </body>
 </html>

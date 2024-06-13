@@ -1,5 +1,7 @@
 <?php
-require_once './helpers.php';
+require_once '../helpers/helpers.php';
+require_once '../helpers/helpers_forms.php';
+require_once '../helpers/helpers_session.php';
 startSession();
 require_once './gestion-forms-inscr.php';
 
@@ -16,9 +18,9 @@ require_once './gestion-forms-inscr.php';
     <?php
     $pageTitre = "Inscription";
     $metaDescription = "Ceci est la page d'inscription";
-    require_once 'header.php';
+    require_once '../header.php';
     if(est_connecte()){
-        redirect('/profil.php');
+        redirect('../profil/profil.php');
     }
     ?>
     
@@ -59,6 +61,6 @@ require_once './gestion-forms-inscr.php';
     </div>
     
 
-    <?php require_once './footer.php'; ?>
+    <?php require_once '../footer.php'; ?>
 </body>
 </html>

@@ -1,7 +1,8 @@
 <?php
-require_once './helpers.php';
+require_once '../helpers/helpers.php';
+require_once '../helpers/helpers_session.php';
+require_once '../helpers/helpers_DB.php';
 startSession();
-require_once './gestion-forms-connex.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,15 +16,15 @@ require_once './gestion-forms-connex.php';
     <?php
     $pageTitre = "Profil";
     $metaDescription = "Ceci est la page de profil";
-    require_once './header.php';
+    require_once '../header.php';
     if(est_connecte() == false){
-        redirect('/connexion.php');
+        redirect('../connexion/connexion.php');
     }else{
         $utilisateur = loadUtilisateur($_SESSION['utilisateurPseudo']);
     }
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         deconnecter_utilisateur();
-        redirect('/connexion.php');
+        redirect('../connexion/connexion.php');
     }
     ?>
     
@@ -33,12 +34,12 @@ require_once './gestion-forms-connex.php';
     <p>Email: </p>
     <p><?=$utilisateur['uti_email']?></p>
 
-    <p class="messageInput"><a href="/changemdp.php">Modifier son mot de passe</a></p>
+    <p class="messageInput"><a href="../mdp/changemdp.php">Modifier son mot de passe</a></p>
 
     <form class="messageInput" method="post">
         <input type="submit" id="boutonDeco" class="bouton" name="boutonDeco" value="Déconnexion">
     </form>
 
-    <?php require_once './footer.php'; ?>
+    <?php require_once '../footer.php'; ?>
 </body>
 </html>

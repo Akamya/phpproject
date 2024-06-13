@@ -1,5 +1,7 @@
 <?php
 
+require_once '../helpers/helpers_DB.php';
+
 //Besoin d'initialiser les variables car la page est dans GET à la base (pas POST)
 $formError = null;
 $messagePseudo = null;
