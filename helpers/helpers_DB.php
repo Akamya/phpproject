@@ -28,8 +28,8 @@ function connexion_bdd(): ?PDO
 }
 
 
-// Prendre l'utilisateur dans la DB
-function loadUtilisateur($pseudo){
+// Prendre l'utilisateur dans la DB sur base du pseudo, return false si pas trouvé.
+function loadUtilisateurByPseudo($pseudo){
 
     // Instancier la connexion à la base de données.
     $pdo = connexion_bdd();
@@ -45,5 +45,24 @@ function loadUtilisateur($pseudo){
 
     return $utilisateur;
 }
+
+// Prendre l'utilisateur dans la DB sur base de l'email, return false si pas trouvé.
+function loadUtilisateurByEmail($email){
+
+    // Instancier la connexion à la base de données.
+    $pdo = connexion_bdd();
+            
+    // Récupérer utilisateur en DB grâce à son pseudo
+    $requete = "SELECT * FROM t_utilisateur_uti WHERE uti_email = '$email'";
+    
+    // Exécute la requête
+    $stmt = $pdo->query($requete);
+
+    // Récupérer le résultat sous le format de tableau associatif
+    $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $utilisateur;
+}
+
 
 ?>

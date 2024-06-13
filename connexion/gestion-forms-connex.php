@@ -33,7 +33,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         try
         {
 
-            $utilisateur = loadUtilisateur($pseudoCo);
+            $utilisateur = loadUtilisateurByPseudo($pseudoCo);
 
             // Si le compte existe
             if($utilisateur){
@@ -50,10 +50,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     redirect('../profil/profil.php');
 
                 }else{
-                    $messageMdpCo = "Ce mdp n'est pas correct";
+                    $formError = true;
+                    $messageMdpCo = "Ce mot de passe n'est pas correct";
                 }
 
             }else{
+                $formError = true;
                 $messagePseudoCo = "Ce compte n'existe pas";
             }
         }

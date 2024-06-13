@@ -20,7 +20,7 @@ startSession();
     if(est_connecte() == false){
         redirect('../connexion/connexion.php');
     }else{
-        $utilisateur = loadUtilisateur($_SESSION['utilisateurPseudo']);
+        $utilisateur = loadUtilisateurByPseudo($_SESSION['utilisateurPseudo']);
     }
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         deconnecter_utilisateur();
@@ -35,6 +35,7 @@ startSession();
     <p><?=$utilisateur['uti_email']?></p>
 
     <p class="messageInput"><a href="../mdp/changemdp.php">Modifier son mot de passe</a></p>
+    <p class="messageInput"><a href="../email/changeemail.php">Modifier son email</a></p>
 
     <form class="messageInput" method="post">
         <input type="submit" id="boutonDeco" class="bouton" name="boutonDeco" value="Déconnexion">

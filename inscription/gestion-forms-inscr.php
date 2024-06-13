@@ -54,15 +54,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Instancier la connexion à la base de données.
             $pdo = connexion_bdd();
 
-            // Calcule un hash sur base de $mdp
-            $mdpHash = password_hash($mdp, PASSWORD_DEFAULT);
-            
-            // La requête permettant d'ajouter un nouvel utilisateur à la table "t_utilisateur_uti".
-            $requete = "INSERT INTO t_utilisateur_uti (uti_pseudo, uti_email, uti_motdepasse) VALUES ('$pseudo', '$emailInscr', '$mdpHash')";
+            $pseudoUtilise = loadUtilisateurByPseudo($pseudo);
+            $emailUtilise = loadUtilisateurByEmail($emailInscr);
 
-            // La méthode "exec()" permet d'exécuter les requêtes non préparées (CREATE/INSERT, UPDATE et DELETE).
-            // La méthode retourne "true" si la requête a été réalisée avec succès, "false" si elle a rencontré une erreur et 0 si aucune ligne n'a été affectée.
-            $pdo->exec($requete);
+            if($pseudoUtilise == false && $emailUtilise == false){
+                // Calcule un hash sur base de $mdp
+                $mdpHash = password_hash($mdp, PASSWORD_DEFAULT);
+                
+                // La requête permettant d'ajouter un nouvel utilisateur à la table "t_utilisateur_uti".
+                $requete = "INSERT INTO t_utilisateur_uti (uti_pseudo, uti_email, uti_motdepasse) VALUES ('$pseudo', '$emailInscr', '$mdpHash')";
+
+                // La méthode "exec()" permet d'exécuter les requêtes non préparées (CREATE/INSERT, UPDATE et DELETE).
+                // La méthode retourne "true" si la requête a été réalisée avec succès, "false" si elle a rencontré une erreur et 0 si aucune ligne n'a été affectée.
+                $pdo->exec($requete);
+            }else{
+                $formError = true;
+                if($pseudoUtilise){
+                    $messagePseudo = "Pseudo déjà utilisé";
+                }
+                if($emailUtilise){
+                    $messageEmailInscr = "Email déjà utilisé";
+                }
+                
+                
+            }
+
+            
         }
 
         catch(PDOException $e){
