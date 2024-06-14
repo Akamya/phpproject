@@ -7,7 +7,7 @@ define('DEV_MODE', true);
 // Récupère le contenu de .env
 function parseEnv() {
     //Parse .env
-    $env = file_get_contents(__DIR__ . "/.env");
+    $env = file_get_contents(__DIR__ . "/.env.ovh");
     $lines = explode("\n", $env);
     
     foreach ($lines as $line) {

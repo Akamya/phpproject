@@ -47,8 +47,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //ENVOI UN MAIL QUAND FORM ENVOYE
     if($formError==false){
 
-        $expediteur = "Elo Lan <elodielanglet420@gmail.com>";
-        $destinataire = "$prenom $nom <$email>";
+        $expediteur = "$prenom $nom <$email>";
+        $destinataire = "Elo Lan <elodielanglet420@gmail.com>";
         $sujet = "projet web - formulaire de contact";
         $entete = [
             "From" => $expediteur,
