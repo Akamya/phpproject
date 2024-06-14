@@ -40,7 +40,7 @@ require_once './gestion-forms-connex.php';
             </div>
             
             <input type="submit" id="boutonCo" class="bouton" name="bouton" value="Valider">
-            <p class="messageInput"><a href="../inscription/inscription.php">Pas de compte ? Inscrivez-vous ici !</a></p>
+            <p class="messageInput pageRedirect"><a href="../inscription/inscription.php" class="pageRedirect">Pas de compte ? Inscrivez-vous ici !</a></p>
             
             <p class="messageInput"><?php statutForm($formError)?></p>
         </form>

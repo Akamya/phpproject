@@ -29,17 +29,31 @@ startSession();
     ?>
     
     <h1>Profil</h1>
-    <p>Pseudo: </p>
-    <p><?=$utilisateur['uti_pseudo']?></p>
-    <p>Email: </p>
-    <p><?=$utilisateur['uti_email']?></p>
+    <figure>
+        <img class="imgUser" src="../assets/img/user2.png" alt="">
+    </figure>
 
-    <p class="messageInput"><a href="../mdp/changemdp.php">Modifier son mot de passe</a></p>
-    <p class="messageInput"><a href="../email/changeemail.php">Modifier son email</a></p>
+    <div class="containerContact">
+        <div class="formContact">
+            <div class="profilInfo">
+                <p>Pseudo: </p>
+                <p><?=$utilisateur['uti_pseudo']?></p>
+                <p>Email: </p>
+                <p><?=$utilisateur['uti_email']?></p>
+            </div>
+            
 
-    <form class="messageInput" method="post">
-        <input type="submit" id="boutonDeco" class="bouton" name="boutonDeco" value="Déconnexion">
-    </form>
+            <p class="messageInput"><a class="pageRedirect" href="../mdp/changemdp.php">Modifier son mot de passe</a></p>
+            <p class="messageInput"><a class="pageRedirect" href="../email/changeemail.php">Modifier son email</a></p>
+
+            <form class="messageInput" method="post">
+                <input type="submit" id="boutonDeco" class="bouton" name="boutonDeco" value="Déconnexion">
+            </form>
+
+        </div>
+        
+    </div>
+    
 
     <?php require_once '../footer.php'; ?>
 </body>

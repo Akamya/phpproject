@@ -2,7 +2,6 @@
 
 .active {
   background-color: rgba(255, 255, 255, 0.244);
-  color: black;
 }
 
 .hidden {
@@ -61,7 +60,7 @@ header nav ul li {
   padding: 0.5em;
   list-style-type: none;
   text-align: center;
-  font-size: 1.8em;
+  font-size: 1.2em;
   border: solid 1px white;
   border-radius: 30px;
 }
@@ -92,6 +91,7 @@ H1 {
   font-size: 2em;
   text-align: center;
   padding-top: 3em;
+  font-weight: bold;
 }
 
 .containerContact {
@@ -132,105 +132,66 @@ textarea {
   padding-bottom: 0.5em;
 }
 
-footer {
+footer,
+.text {
   text-align: center;
   margin-top: 3em;
   margin-bottom: 1em;
-}
-
-/* .col-12,
-.col-6,
-.col-4,
-.col-3,
-.col-2,
-.col-1 {
-  position: relative;
+  font-size: 1.5em;
 }
 
 figure {
-  width: 100%;
-  margin: 0;
-}
-
-figure img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-#logo {
-  width: 20%;
-  margin: auto;
-}
-
-nav ul {
-  padding: 0;
-}
-
-article {
-  padding: 1em;
-  background-color: rgba(255, 255, 255, 0.492);
-  border-width: 0px 1px 0px 1px;
-  border: black solid 1px;
-}
-
-h1 {
-  padding-left: 1em;
-  font-size: 3em;
-  text-shadow: rgba(0, 0, 0, 0.436) 1px 0 10px;
-}
-
-iframe {
-  width: 100%;
-}
-
-footer {
-  padding: 1em;
+  margin-top: 3em;
   text-align: center;
 }
 
-li a:link,
-li a:visited {
-  color: white;
+.imgAccueil {
+  width: 65%;
+  margin: 0;
+  border-radius: 30px;
+}
+
+.imgUser {
+  width: 5%;
+  margin: 0;
+}
+
+footer {
+  font-size: 1em;
+}
+
+.pageRedirect,
+.pageRedirect:link,
+.pageRedirect:visited {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  font-size: 1.1em;
   text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
-li a:hover {
-  animation-name: nav;
-  animation-duration: 1s;
-  animation-timing-function: linear;
+.pageRedirect:hover {
+  color: black;
 }
 
-@keyframes nav {
-  0% {
-    color: white;
-  }
-
-  50% {
-    color: rgb(255, 191, 72);
-  }
-
-  100% {
-    color: white;
-  }
+.profilInfo {
+  background-color: aliceblue;
+  color: black;
+  border-radius: 10px;
+  font-size: 1.1em;
+  padding: 2em;
+  margin-bottom: 1em;
 }
 
-#latest {
-  animation-name: latest;
-  animation: example 1s ease-in-out;
-  animation-iteration-count: infinite;
+.profilInfo > p {
+  padding: 0.5em;
 }
 
-@keyframes latest {
-  0% {
-    color: white;
-  }
+.profilInfo > p:nth-child(even) {
+  font-weight: bold;
+}
 
-  50% {
-    color: rgb(255, 191, 72);
-  }
-
-  100% {
-    color: white;
-  }
-} */
+.profilInfo > p:nth-child(3) {
+  padding-top: 1.5em;
+}

@@ -24,7 +24,7 @@ require_once './gestion-forms-mdp.php';
     }
     ?>
     
-    <h1>Modifictation du mot de passe</h1>
+    <h1>Modification du mot de passe</h1>
 
     <div class="containerContact">
         <form class="formContact" method="post">
