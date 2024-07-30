@@ -1,4 +1,5 @@
 <?php
+require_once '../helpers/helpers_DB.php';
 require_once '../helpers/helpers_forms.php';
 require_once '../helpers/helpers_session.php';
 startSession();
@@ -7,12 +8,20 @@ require_once './gestion-forms-contact.php';
 
 <!DOCTYPE html>
 <html lang="fr">
-<?php require_once '../head.php'; ?>
+<?php 
+ $pageTitre = "Contact";
+ $metaDescription = "Ceci est la page contact";
+require_once '../head.php'; ?>
 <body>
     <?php
-    $pageTitre = "Contact";
-    $metaDescription = "Ceci est la page contact";
-    require_once '../nav.php'; 
+   
+    require_once '../nav.php';
+    function contactPrefill(){
+        if(est_connecte()){
+            $utilisateur = loadUtilisateurByID($_SESSION['utilisateurID']);
+            return $utilisateur['uti_email'];
+        }
+    }
     ?>
 
     <h1>Contact</h1>
@@ -35,7 +44,7 @@ require_once './gestion-forms-contact.php';
 
             <div class="flexInput">
                 <!-- <label for="email">Email : </label> -->
-                <input type="email" id="email" name="email" required placeholder="Email*" value=<?=$formError ? $email : ""?>>
+                <input type="email" id="email" name="email" required placeholder="Email*" value=<?=$formError ? $email : contactPrefill()?>>
                 <p class="messageInput"><?=$messageEmail?></p>
             </div>
         

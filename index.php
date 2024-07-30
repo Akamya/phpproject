@@ -1,16 +1,19 @@
 <?php
 require_once './helpers/helpers_session.php';
+// Pour la nav
 startSession()
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-<?php require_once './head.php'; ?>
+<?php 
+ $pageTitre = "Accueil";
+ $metaDescription = "Ceci est la page d'accueil";
+require_once './head.php'; ?>
 <body>
 
     <?php
-    $pageTitre = "Accueil";
-    $metaDescription = "Ceci est la page d'accueil";
+   
     require_once './nav.php'; ?>
     
     <h1>Accueil</h1>

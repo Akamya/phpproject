@@ -7,12 +7,14 @@ require_once './gestion-forms-connex.php';
 
 <!DOCTYPE html>
 <html lang="fr">
-<?php require_once '../head.php'; ?>
+<?php 
+$pageTitre = "Connexion";
+$metaDescription = "Ceci est la page de connexion";
+require_once '../head.php'; ?>
 <body>
 
     <?php
-    $pageTitre = "Connexion";
-    $metaDescription = "Ceci est la page de connexion";
+    
     require_once '../nav.php';
     if(est_connecte()){
         redirect('../profil/profil.php');

@@ -9,12 +9,14 @@ require_once './gestion-forms-mdp.php';
 
 <!DOCTYPE html>
 <html lang="fr">
-<?php require_once '../head.php'; ?>
+<?php 
+$pageTitre = "Modification du mot de passe";
+$metaDescription = "Ceci est la page de la modification du mot de passe";
+require_once '../head.php'; ?>
 <body>
 
     <?php
-    $pageTitre = "Modification du mot de passe";
-    $metaDescription = "Ceci est la page de la modification du mot de passe";
+    
     require_once '../nav.php';
     if(est_connecte() == false){
         redirect('../connexion/connexion.php');

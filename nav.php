@@ -10,7 +10,6 @@ require_once __dir__ . '/helpers/helpers_forms.php';
     <div class="banner"></div>
     <nav>
         <ul class="liens container">
-            <!-- Met la classe "active" sur le lien actif -->
             <?php if(est_connecte()){
                 echo $navProfil;
             }

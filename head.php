@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="<?=$metametaDescription ?? ''?>">
+    <meta name="description" content="<?=$metaDescription ?? ''?>">
     <title><?=$pageTitre ?? ''?></title>
     <!-- ex: $pageTitre ?? ''
     Permet de vérifier si la valeur existe(pas null), sinon '' (ex: string vide)-->

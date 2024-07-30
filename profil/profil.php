@@ -7,16 +7,21 @@ startSession();
 
 <!DOCTYPE html>
 <html lang="fr">
-<?php require_once '../head.php'; ?>
+<?php 
+$pageTitre = "Profil";
+$metaDescription = "Ceci est la page de profil";
+require_once '../head.php'; 
+?>
 <body>
 
     <?php
-    $pageTitre = "Profil";
-    $metaDescription = "Ceci est la page de profil";
+    
+    
     require_once '../nav.php';
     if(est_connecte() == false){
         redirect('../connexion/connexion.php');
     }else{
+        // Cherche utilisateur dans DB
         $utilisateur = loadUtilisateurByID($_SESSION['utilisateurID']);
     }
     if($_SERVER["REQUEST_METHOD"] == "POST"){

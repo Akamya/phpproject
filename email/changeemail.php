@@ -9,12 +9,13 @@ require_once './gestion-forms-email.php';
 
 <!DOCTYPE html>
 <html lang="fr">
-<?php require_once '../head.php'; ?>
+<?php
+$pageTitre = "Modification de l'email";
+$metaDescription = "Ceci est la page de la modification de l'email";
+require_once '../head.php'; ?>
 <body>
 
     <?php
-    $pageTitre = "Modification de l'email";
-    $metaDescription = "Ceci est la page de la modification de l'email";
     require_once '../nav.php';
     if(est_connecte() == false){
         redirect('../connexion/connexion.php');

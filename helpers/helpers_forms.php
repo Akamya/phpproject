@@ -38,4 +38,6 @@ $navProfil = nav("/index.php", "Accueil") .
 nav("/contact/contact.php", "Contact") .
 nav("/profil/profil.php", "Profil");
 
+
+
 ?>
